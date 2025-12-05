@@ -139,6 +139,189 @@ The app includes drinks across these categories:
 3. **Responsive Design**: The app adapts to your screen size - works great on phones!
 4. **No Internet Required**: Once loaded, the app works offline.
 
+## Making Changes & Uploading to Vercel
+
+### 1. Set Up Git (One-time Setup)
+
+Open Command Prompt/PowerShell and navigate to the Webapp folder:
+
+```bash
+cd C:\Users\poket\Desktop\Webapp
+```
+
+Initialize git:
+```bash
+git init
+git add .
+git commit -m "Initial commit: Flashcard web app"
+```
+
+### 2. Create a GitHub Repository
+
+1. Go to https://github.com/new
+2. Create a new repository (name it `flashcards-app` or similar)
+3. **Leave all checkboxes unchecked** (you already have README and .gitignore)
+4. Click "Create repository"
+5. You'll see instructions. Copy the commands and run them in your Command Prompt:
+
+```bash
+git branch -M main
+git remote add origin https://github.com/YOUR_USERNAME/flashcards-app.git
+git push -u origin main
+```
+
+(Replace `YOUR_USERNAME` with your GitHub username)
+
+### 3. Deploy to Vercel
+
+1. Go to https://vercel.com/new
+2. Click "Import Git Repository"
+3. Paste your repo URL: `https://github.com/YOUR_USERNAME/flashcards-app`
+4. Click "Import" → "Deploy"
+5. **Done!** You'll get a live URL (e.g., `https://flashcards-app.vercel.app`)
+
+---
+
+### Making Updates (The Easy Part!)
+
+**Every time you want to change something:**
+
+1. Edit any file in your `Webapp` folder (using a text editor like VS Code)
+2. Open Command Prompt and go to the folder:
+   ```bash
+   cd C:\Users\poket\Desktop\Webapp
+   ```
+3. Run these commands:
+   ```bash
+   git add .
+   git commit -m "Update: describe what you changed"
+   git push
+   ```
+4. **Wait 30 seconds** - Vercel automatically rebuilds and deploys!
+5. Refresh your site - changes are live!
+
+---
+
+### Example: Adding a New Drink
+
+Let's say you want to add a new drink to the list:
+
+**Step 1:** Open `src/data/flashcards.js` in a text editor
+
+**Step 2:** Add a new drink at the end of the list (before the closing bracket):
+```javascript
+  { id: 127, name: "My New Drink", type: "Whiskey", subtype: "Irish", serve: "Neat" }
+];
+```
+
+**Step 3:** Save the file
+
+**Step 4:** Go to Command Prompt:
+```bash
+cd C:\Users\poket\Desktop\Webapp
+git add .
+git commit -m "Add new drink: My New Drink"
+git push
+```
+
+**Step 5:** Within 30 seconds, your friends will see the new drink when they visit the site!
+
+---
+
+### Example: Changing Button Colors
+
+**Step 1:** Open `src/styles/Home.css`
+
+**Step 2:** Find `.study-btn` and change the gradient:
+```css
+.study-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* Change to something like: */
+  background: linear-gradient(135deg, #FF6B6B 0%, #FF8E72 100%);
+}
+```
+
+**Step 3:** Save and upload:
+```bash
+cd C:\Users\poket\Desktop\Webapp
+git add .
+git commit -m "Change study button color to red"
+git push
+```
+
+**Done!** Your friends see the new button color immediately!
+
+---
+
+### Helpful Git Commands
+
+**Check what files changed:**
+```bash
+git status
+```
+
+**See your changes before uploading:**
+```bash
+git diff
+```
+
+**View your commit history:**
+```bash
+git log --oneline
+```
+
+**Undo last commit (if you made a mistake):**
+```bash
+git reset HEAD~1
+```
+
+---
+
+### Files You'll Edit Most Often
+
+- `src/data/flashcards.js` - Add/remove drinks
+- `src/components/Home.jsx` - Change home screen text/layout
+- `src/components/StudyMode.jsx` - Modify study mode features
+- `src/components/QuizMode.jsx` - Modify quiz mode features
+- `src/styles/*.css` - Change colors, sizes, fonts
+- `index.html` - Change page title or meta tags
+
+---
+
+### What NOT to Touch
+
+- `package.json` - unless adding new packages
+- `vite.config.js` - unless you know what you're doing
+- `node_modules/` - auto-generated, never edit
+
+---
+
+### Troubleshooting
+
+**"Git is not recognized"**
+- Install Git from https://git-scm.com/
+- Restart Command Prompt
+
+**"fatal: not a git repository"**
+- Make sure you're in the right folder: `C:\Users\poket\Desktop\Webapp`
+- Run: `git init`
+
+**Changes not showing up**
+- Wait 60 seconds (Vercel takes time to rebuild)
+- Refresh your browser (Ctrl+Shift+Delete for hard refresh)
+- Check Vercel dashboard to see if deployment finished
+
+---
+
+### Share Your Live Site
+
+Once deployed, share this link with your friends:
+```
+https://flashcards-app.vercel.app
+```
+
+They can use it on iPhone, Android, or any browser - and they'll always see your latest updates!
+
 ## License
 
 This is a personal learning project based on the original Android Flashcards App.

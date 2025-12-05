@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 30px;
+  gap: 20px;
   width: 100%;
   max-width: 600px;
   background: white;
@@ -15,21 +15,26 @@
 .back-btn {
   position: absolute;
   top: 20px;
-  left: 20px;
-  background: none;
+  right: 20px;
+  background: #E74C3C;
   border: none;
-  color: #f5576c;
-  font-size: 16px;
-  font-weight: 600;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
   cursor: pointer;
-  padding: 8px 12px;
-  border-radius: 8px;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .back-btn:hover {
-  background: #f0f0f0;
-  color: #f093fb;
+  background: #C0392B;
+  transform: scale(1.05);
 }
 
 .progress-info {
@@ -37,230 +42,254 @@
   margin-top: 10px;
 }
 
-.progress-info h2 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 10px;
-}
-
 .progress {
-  font-size: 24px;
-  font-weight: 700;
-  color: #f5576c;
+  font-size: 18px;
+  font-weight: 600;
+  color: #666;
   margin: 0;
 }
 
-.flashcard-wrapper {
-  width: 100%;
-  perspective: 1000px;
-  height: 300px;
+/* Progress Squares */
+.progress-squares {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin: 10px 0;
 }
 
-.flashcard {
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.6s;
+.progress-square {
+  width: 24px;
+  height: 24px;
+  background: #E0E0E0;
+  border-radius: 4px;
+  transition: background 0.3s ease;
 }
 
-.flashcard.flipped {
-  transform: rotateY(180deg);
+.progress-square.correct {
+  background: #27AE60;
 }
 
-.flashcard-front,
-.flashcard-back {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
+.progress-square.incorrect {
+  background: #E74C3C;
+}
+
+/* Drink Name Display */
+.drink-name-display {
+  margin: 40px 0 80px 0;
+  text-align: center;
+}
+
+.drink-name-display h2 {
+  font-size: 32px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+}
+
+/* Answer Buttons */
+.answer-buttons {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  padding: 30px;
-  text-align: center;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-
-.flashcard-front {
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  color: white;
-}
-
-.flashcard-back {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  transform: rotateY(180deg);
-  padding: 25px;
-}
-
-.drink-name {
-  font-size: 36px;
-  font-weight: 700;
-  margin: 0;
-  word-break: break-word;
-}
-
-.label {
-  font-size: 14px;
-  font-weight: 600;
-  margin-bottom: 5px;
-  opacity: 0.9;
-}
-
-.value {
-  font-size: 16px;
-  font-weight: 600;
-  margin-bottom: 15px;
-}
-
-.value:last-child {
-  margin-bottom: 0;
-}
-
-.flip-hint {
-  font-size: 14px;
-  color: #999;
-  margin: 0;
-  font-style: italic;
-}
-
-.navigation-buttons {
-  display: flex;
-  gap: 20px;
+  gap: 12px;
   width: 100%;
-  justify-content: center;
 }
 
-.nav-btn {
-  flex: 1;
-  max-width: 200px;
-  padding: 12px 24px;
+.answer-btn {
+  width: 100%;
+  padding: 20px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   cursor: pointer;
-  background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  background: #4A90E2;
   color: white;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease;
+  text-align: center;
 }
 
-.nav-btn:hover:not(:disabled) {
+.answer-btn:hover:not(:disabled) {
+  background: #357ABD;
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(245, 87, 108, 0.4);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
 }
 
-.nav-btn:disabled {
+.answer-btn:disabled {
+  cursor: not-allowed;
+}
+
+.answer-btn.correct {
+  background: #27AE60;
+}
+
+.answer-btn.incorrect {
+  background: #E74C3C;
+}
+
+/* Next Button */
+.next-btn {
+  width: 100%;
+  padding: 16px;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  background: #27AE60;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+.next-btn:hover:not(:disabled) {
+  background: #229954;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+
+.next-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   transform: none;
 }
 
+/* Results Modal */
+.results-modal {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  max-width: 400px;
+}
+
+.results-modal h2 {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.results-message {
+  font-size: 20px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .quiz-container {
-    gap: 25px;
+    gap: 15px;
     padding: 30px 20px;
     max-width: 100%;
   }
 
   .back-btn {
     top: 15px;
-    left: 15px;
-    font-size: 14px;
-  }
-
-  .progress-info h2 {
-    font-size: 24px;
-  }
-
-  .progress {
+    right: 15px;
+    width: 45px;
+    height: 45px;
     font-size: 20px;
   }
 
-  .flashcard-wrapper {
-    height: 250px;
+  .progress {
+    font-size: 16px;
   }
 
-  .drink-name {
-    font-size: 28px;
+  .progress-square {
+    width: 20px;
+    height: 20px;
   }
 
-  .flashcard-front,
-  .flashcard-back {
-    padding: 25px;
+  .drink-name-display {
+    margin: 30px 0 60px 0;
   }
 
-  .navigation-buttons {
-    gap: 15px;
+  .drink-name-display h2 {
+    font-size: 26px;
   }
 
-  .nav-btn {
-    max-width: 150px;
-    padding: 10px 20px;
-    font-size: 14px;
+  .answer-btn {
+    padding: 18px;
+    font-size: 15px;
+  }
+
+  .next-btn {
+    padding: 14px;
+    font-size: 16px;
+  }
+
+  .results-modal {
+    padding: 30px;
+  }
+
+  .results-modal h2 {
+    font-size: 26px;
+  }
+
+  .results-message {
+    font-size: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .quiz-container {
-    gap: 20px;
+    gap: 12px;
     padding: 20px 15px;
     border-radius: 12px;
   }
 
   .back-btn {
     top: 12px;
-    left: 12px;
-    font-size: 13px;
-    padding: 6px 10px;
-  }
-
-  .progress-info h2 {
-    font-size: 20px;
-  }
-
-  .progress {
+    right: 12px;
+    width: 40px;
+    height: 40px;
     font-size: 18px;
   }
 
-  .flashcard-wrapper {
-    height: 220px;
-  }
-
-  .drink-name {
-    font-size: 22px;
-  }
-
-  .flashcard-front,
-  .flashcard-back {
-    padding: 20px;
-  }
-
-  .label {
-    font-size: 12px;
-  }
-
-  .value {
+  .progress {
     font-size: 14px;
   }
 
-  .flip-hint {
-    font-size: 12px;
+  .progress-squares {
+    gap: 6px;
   }
 
-  .navigation-buttons {
+  .progress-square {
+    width: 18px;
+    height: 18px;
+  }
+
+  .drink-name-display {
+    margin: 20px 0 40px 0;
+  }
+
+  .drink-name-display h2 {
+    font-size: 22px;
+  }
+
+  .answer-buttons {
     gap: 10px;
-    flex-direction: column;
   }
 
-  .nav-btn {
-    max-width: 100%;
-    padding: 10px 16px;
-    font-size: 13px;
+  .answer-btn {
+    padding: 16px;
+    font-size: 14px;
+  }
+
+  .next-btn {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .results-modal {
+    padding: 25px;
+  }
+
+  .results-modal h2 {
+    font-size: 22px;
+  }
+
+  .results-message {
+    font-size: 16px;
   }
 }
