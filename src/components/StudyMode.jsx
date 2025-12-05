@@ -54,8 +54,12 @@ export default function StudyMode({ onBack, startIndex = 0 }) {
                 <p className="value">{currentCard.subtype}</p>
               </>
             )}
-            <p className="label">Serve</p>
-            <p className="value">{currentCard.serve}</p>
+            {currentCard.type !== "בירה" && (
+              <>
+                <p className="label">Serve</p>
+                <p className="value">{currentCard.serve}</p>
+              </>
+            )}
           </div>
         </div>
       </div>
