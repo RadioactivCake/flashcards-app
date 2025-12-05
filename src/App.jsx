@@ -25,8 +25,8 @@ export default function App() {
   return (
     <div className="app">
       {currentMode === 'home' && <Home onModeChange={handleModeChange} />}
+      {currentMode === 'practice' && <FlashcardList onBack={handleBack} onCardSelect={handleCardSelect} />}
       {currentMode === 'study' && <StudyMode onBack={handleBack} startIndex={startIndex} />}
-      {currentMode === 'list' && <FlashcardList onBack={handleBack} onCardSelect={handleCardSelect} />}
       {currentMode === 'quiz' && <QuizMode onBack={handleBack} />}
     </div>
   );

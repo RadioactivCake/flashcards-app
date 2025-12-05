@@ -9,17 +9,10 @@ export default function Home({ onModeChange }) {
 
       <div className="button-container">
         <button
-          className="primary-btn study-btn"
-          onClick={() => onModeChange('study')}
+          className="primary-btn practice-btn"
+          onClick={() => onModeChange('practice')}
         >
-          Study Mode
-        </button>
-
-        <button
-          className="primary-btn list-btn"
-          onClick={() => onModeChange('list')}
-        >
-          Browse List
+          Practice Mode
         </button>
 
         <button
