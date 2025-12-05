@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { flashcards } from '../data/flashcards';
 import '../styles/StudyMode.css';
 
-export default function StudyMode({ onBack }) {
-  const [currentIndex, setCurrentIndex] = useState(0);
+export default function StudyMode({ onBack, startIndex = 0 }) {
+  const [currentIndex, setCurrentIndex] = useState(startIndex);
   const [isFlipped, setIsFlipped] = useState(false);
 
   const currentCard = flashcards[currentIndex];

@@ -16,6 +16,13 @@ export default function Home({ onModeChange }) {
         </button>
 
         <button
+          className="primary-btn list-btn"
+          onClick={() => onModeChange('list')}
+        >
+          Browse List
+        </button>
+
+        <button
           className="primary-btn quiz-btn"
           onClick={() => onModeChange('quiz')}
         >

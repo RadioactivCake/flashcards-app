@@ -1,0 +1,232 @@
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  background: white;
+  padding: 40px 30px;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  position: relative;
+  max-height: 90vh;
+  overflow: hidden;
+}
+
+.back-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #E74C3C;
+  border: none;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-btn:hover {
+  background: #C0392B;
+  transform: scale(1.05);
+}
+
+.list-header {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 10px;
+}
+
+.list-header h2 {
+  font-size: 28px;
+  color: #333;
+  margin: 0 0 8px 0;
+}
+
+.total-count {
+  font-size: 16px;
+  color: #666;
+  margin: 0;
+}
+
+.flashcard-list {
+  width: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-right: 10px;
+}
+
+/* Scrollbar styling */
+.flashcard-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.flashcard-list::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 4px;
+}
+
+.flashcard-list::-webkit-scrollbar-thumb {
+  background: #4A90E2;
+  border-radius: 4px;
+}
+
+.flashcard-list::-webkit-scrollbar-thumb:hover {
+  background: #357ABD;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.list-item:hover {
+  background: #e9ecef;
+  border-color: #4A90E2;
+  transform: translateX(4px);
+  box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+}
+
+.list-item-number {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4A90E2;
+  min-width: 40px;
+  text-align: center;
+}
+
+.list-item-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.list-item-name {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 4px 0;
+  word-break: break-word;
+}
+
+.list-item-type {
+  font-size: 14px;
+  color: #666;
+  margin: 0;
+}
+
+.list-item-arrow {
+  font-size: 24px;
+  color: #4A90E2;
+  font-weight: bold;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .list-container {
+    padding: 30px 20px;
+    max-width: 100%;
+  }
+
+  .back-btn {
+    top: 15px;
+    right: 15px;
+    width: 45px;
+    height: 45px;
+    font-size: 20px;
+  }
+
+  .list-header h2 {
+    font-size: 24px;
+  }
+
+  .total-count {
+    font-size: 14px;
+  }
+
+  .list-item {
+    padding: 14px;
+    gap: 12px;
+  }
+
+  .list-item-number {
+    font-size: 16px;
+    min-width: 35px;
+  }
+
+  .list-item-name {
+    font-size: 18px;
+  }
+
+  .list-item-type {
+    font-size: 13px;
+  }
+
+  .list-item-arrow {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-container {
+    padding: 20px 15px;
+    border-radius: 12px;
+  }
+
+  .back-btn {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+
+  .list-header h2 {
+    font-size: 20px;
+  }
+
+  .total-count {
+    font-size: 13px;
+  }
+
+  .flashcard-list {
+    gap: 10px;
+  }
+
+  .list-item {
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .list-item-number {
+    font-size: 14px;
+    min-width: 30px;
+  }
+
+  .list-item-name {
+    font-size: 16px;
+  }
+
+  .list-item-type {
+    font-size: 12px;
+  }
+
+  .list-item-arrow {
+    font-size: 18px;
+  }
+}
