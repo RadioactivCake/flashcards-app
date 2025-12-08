@@ -41,6 +41,20 @@
   padding: 30px;
   border-radius: 15px;
   backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.cocktail-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .cocktail-name-display h1 {
@@ -181,8 +195,68 @@
   transform: scale(1.1);
 }
 
+/* Ingredient Selection Steps */
+.ingredient-selection-step {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 2px dashed #ddd;
+}
+
+.ingredient-selection-step h4 {
+  color: #667eea;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.ingredient-grid,
+.spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.option-btn.small {
+  padding: 10px 15px;
+  font-size: 14px;
+}
+
+.amount-input-container {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.amount-input {
+  flex: 1;
+  padding: 12px;
+  border: 2px solid #667eea;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.cancel-btn {
+  padding: 10px 20px;
+  background: #6c757d;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+}
+
+.cancel-btn:hover {
+  background: #5a6268;
+}
+
+.selected-ingredients {
+  margin-bottom: 20px;
+}
+
 /* Glass Options */
-.glass-options {
+.glass-options,
+.garnish-options {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 10px;
