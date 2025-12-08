@@ -39,71 +39,8 @@ export const cocktails = [
     ],
     garnish: "ענף נענה ופרוסת ליים",
     glass: "היי בול"
-  },
-  {
-    id: 2,
-    name: "Margarita",
-    method: "שייקר - שייק עם קרח ומיין",
-    ingredients: [
-      { item: "טקילה", specification: "סילבר", amount: "2oz" },
-      { item: "ליקר", specification: "טריפל סק", amount: "1oz" },
-      { item: "מיץ ליים", specification: null, amount: "1oz" },
-      { item: "סירופ אגבה", specification: null, amount: "1/2oz" }
-    ],
-    garnish: "מלח על השפה ופרוסת ליים",
-    glass: "מרגריטה/קופה"
-  },
-  {
-    id: 3,
-    name: "Negroni",
-    method: "בילד - בנה ישירות בכוס עם קרח",
-    ingredients: [
-      { item: "ג'ין", specification: null, amount: "1oz" },
-      { item: "קמפרי", specification: null, amount: "1oz" },
-      { item: "ורמוט", specification: "רוסו (אדום)", amount: "1oz" }
-    ],
-    garnish: "קליפת תפוז",
-    glass: "לואו בול"
-  },
-  {
-    id: 4,
-    name: "Cosmopolitan",
-    method: "שייקר - שייק עם קרח ומיין",
-    ingredients: [
-      { item: "וודקה", specification: null, amount: "1.5oz" },
-      { item: "ליקר", specification: "טריפל סק", amount: "1/2oz" },
-      { item: "מיץ חמוציות", specification: null, amount: "1oz" },
-      { item: "מיץ ליים", specification: null, amount: "1/2oz" }
-    ],
-    garnish: "קליפת לימון",
-    glass: "מרטיני/קופה"
-  },
-  {
-    id: 5,
-    name: "Whiskey Sour",
-    method: "שייקר - שייק עם קרח ומיין",
-    ingredients: [
-      { item: "וויסקי", specification: "בורבון", amount: "2oz" },
-      { item: "מיץ לימון", specification: null, amount: "3/4oz" },
-      { item: "סירופ פשוט", specification: null, amount: "1/2oz" },
-      { item: "חלבון ביצה", specification: null, amount: "אופציונלי" }
-    ],
-    garnish: "פרוסת לימון ודובדבן מראשינו",
-    glass: "לואו בול"
-  },
-  {
-    id: 6,
-    name: "Espresso Martini",
-    method: "שייקר - שייק עם קרח ומיין",
-    ingredients: [
-      { item: "וודקה", specification: null, amount: "2oz" },
-      { item: "ליקר", specification: "קלואה/קפה", amount: "1oz" },
-      { item: "אספרסו", specification: null, amount: "1oz" },
-      { item: "סירופ פשוט", specification: null, amount: "1/2oz" }
-    ],
-    garnish: "3 פולי קפה",
-    glass: "מרטיני/קופה"
   }
+  
 ];
 
 // ============================================
