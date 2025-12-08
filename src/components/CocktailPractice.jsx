@@ -13,7 +13,6 @@ export default function CocktailPractice({ onBack }) {
   // For building an ingredient
   const [currentIngredient, setCurrentIngredient] = useState({ item: '', spec: '', amount: '' });
   const [showSpecSelection, setShowSpecSelection] = useState(false);
-  const [showAmountInput, setShowAmountInput] = useState(false);
 
   useEffect(() => {
     selectRandomCocktail();
@@ -33,7 +32,6 @@ export default function CocktailPractice({ onBack }) {
     setShowAnswer(false);
     setCurrentIngredient({ item: '', spec: '', amount: '' });
     setShowSpecSelection(false);
-    setShowAmountInput(false);
   };
 
   const handleIngredientSelect = (item) => {
@@ -43,39 +41,27 @@ export default function CocktailPractice({ onBack }) {
       // This ingredient needs specification
       setCurrentIngredient({ item, spec: '', amount: '' });
       setShowSpecSelection(true);
-      setShowAmountInput(false);
     } else {
-      // No specification needed, go straight to amount
+      // No specification needed
       setCurrentIngredient({ item, spec: null, amount: '' });
       setShowSpecSelection(false);
-      setShowAmountInput(true);
     }
   };
 
   const handleSpecificationSelect = (spec) => {
     setCurrentIngredient({ ...currentIngredient, spec });
     setShowSpecSelection(false);
-    setShowAmountInput(true);
   };
 
-  const handleAddIngredient = () => {
-    if (currentIngredient.amount.trim()) {
+  const addIngredient = () => {
+    if (currentIngredient.item && currentIngredient.amount) {
       setSelectedIngredients([...selectedIngredients, { ...currentIngredient }]);
-
-      // Reset for next ingredient
       setCurrentIngredient({ item: '', spec: '', amount: '' });
-      setShowAmountInput(false);
     }
   };
 
   const removeIngredient = (index) => {
     setSelectedIngredients(selectedIngredients.filter((_, i) => i !== index));
-  };
-
-  const cancelIngredient = () => {
-    setCurrentIngredient({ item: '', spec: '', amount: '' });
-    setShowSpecSelection(false);
-    setShowAmountInput(false);
   };
 
   const checkAnswer = () => {
@@ -105,17 +91,16 @@ export default function CocktailPractice({ onBack }) {
         {/* Method Selection */}
         <div className="section">
           <h3>שיטת הכנה {selectedMethod && '✓'}</h3>
-          <div className="method-options">
+          <select
+            value={selectedMethod}
+            onChange={(e) => setSelectedMethod(e.target.value)}
+            className="dropdown-select"
+          >
+            <option value="">בחר שיטה</option>
             {methodOptions.map((method, idx) => (
-              <button
-                key={idx}
-                className={`option-btn ${selectedMethod === method ? 'selected' : ''}`}
-                onClick={() => setSelectedMethod(method)}
-              >
-                {method}
-              </button>
+              <option key={idx} value={method}>{method}</option>
             ))}
-          </div>
+          </select>
         </div>
 
         {/* Ingredients Selection */}
@@ -136,98 +121,79 @@ export default function CocktailPractice({ onBack }) {
             </div>
           )}
 
-          {/* Step 1: Select ingredient type */}
-          {!currentIngredient.item && !showSpecSelection && !showAmountInput && (
-            <div className="ingredient-selection-step">
-              <h4>בחר מרכיב:</h4>
-              <div className="ingredient-grid">
-                {Object.keys(ingredientSpecs).map((item) => (
-                  <button
-                    key={item}
-                    className="option-btn small"
-                    onClick={() => handleIngredientSelect(item)}
-                  >
-                    {item}
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
+          {/* Ingredient input */}
+          <div className="ingredient-input">
+            <select
+              value={currentIngredient.item}
+              onChange={(e) => handleIngredientSelect(e.target.value)}
+              className="ingredient-select"
+            >
+              <option value="">בחר מרכיב</option>
+              {Object.keys(ingredientSpecs).map((item) => (
+                <option key={item} value={item}>{item}</option>
+              ))}
+            </select>
 
-          {/* Step 2: Select specification (if needed) */}
-          {showSpecSelection && currentIngredient.item && (
-            <div className="ingredient-selection-step">
-              <h4>בחר סוג {currentIngredient.item}:</h4>
-              <div className="spec-grid">
+            {/* Show specification dropdown if needed */}
+            {showSpecSelection && ingredientSpecs[currentIngredient.item] && (
+              <select
+                value={currentIngredient.spec}
+                onChange={(e) => handleSpecificationSelect(e.target.value)}
+                className="spec-select"
+              >
+                <option value="">בחר סוג</option>
                 {ingredientSpecs[currentIngredient.item].map((spec) => (
-                  <button
-                    key={spec}
-                    className="option-btn small"
-                    onClick={() => handleSpecificationSelect(spec)}
-                  >
-                    {spec}
-                  </button>
+                  <option key={spec} value={spec}>{spec}</option>
                 ))}
-              </div>
-              <button onClick={cancelIngredient} className="cancel-btn">ביטול</button>
-            </div>
-          )}
+              </select>
+            )}
 
-          {/* Step 3: Type amount */}
-          {showAmountInput && currentIngredient.item && (
-            <div className="ingredient-selection-step amount-step">
-              <h4>
-                כמה {currentIngredient.item} {currentIngredient.spec ? `(${currentIngredient.spec})` : ''}?
-              </h4>
-              <div className="amount-input-container">
+            {currentIngredient.item && !showSpecSelection && (
+              <>
                 <input
                   type="text"
                   placeholder="לדוגמה: 2oz, 1/2oz, splash"
                   value={currentIngredient.amount}
                   onChange={(e) => setCurrentIngredient({ ...currentIngredient, amount: e.target.value })}
                   className="amount-input"
-                  autoFocus
                   onKeyPress={(e) => {
-                    if (e.key === 'Enter') handleAddIngredient();
+                    if (e.key === 'Enter') addIngredient();
                   }}
                 />
-                <button onClick={handleAddIngredient} className="add-btn">הוסף</button>
-              </div>
-              <button onClick={cancelIngredient} className="cancel-btn">ביטול</button>
-            </div>
-          )}
+                <button onClick={addIngredient} className="add-btn">הוסף</button>
+              </>
+            )}
+          </div>
         </div>
 
         {/* Glass Selection */}
         <div className="section">
           <h3>כוס {selectedGlass && '✓'}</h3>
-          <div className="glass-options">
+          <select
+            value={selectedGlass}
+            onChange={(e) => setSelectedGlass(e.target.value)}
+            className="dropdown-select"
+          >
+            <option value="">בחר כוס</option>
             {glassTypes.map((glass, idx) => (
-              <button
-                key={idx}
-                className={`option-btn ${selectedGlass === glass ? 'selected' : ''}`}
-                onClick={() => setSelectedGlass(glass)}
-              >
-                {glass}
-              </button>
+              <option key={idx} value={glass}>{glass}</option>
             ))}
-          </div>
+          </select>
         </div>
 
         {/* Garnish Selection */}
         <div className="section">
           <h3>עיטור (Garnish) {selectedGarnish && '✓'}</h3>
-          <div className="garnish-options">
+          <select
+            value={selectedGarnish}
+            onChange={(e) => setSelectedGarnish(e.target.value)}
+            className="dropdown-select"
+          >
+            <option value="">בחר עיטור</option>
             {garnishOptions.map((garnish, idx) => (
-              <button
-                key={idx}
-                className={`option-btn ${selectedGarnish === garnish ? 'selected' : ''}`}
-                onClick={() => setSelectedGarnish(garnish)}
-              >
-                {garnish}
-              </button>
+              <option key={idx} value={garnish}>{garnish}</option>
             ))}
-          </div>
+          </select>
         </div>
       </div>
 
