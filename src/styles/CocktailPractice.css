@@ -13,11 +13,6 @@
   align-items: center;
   gap: 20px;
   margin-bottom: 10px;
-  position: sticky;
-  top: 0;
-  z-index: 101;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  padding: 10px 0;
 }
 
 .back-btn {
@@ -45,7 +40,7 @@
   text-align: center;
   margin-bottom: 20px;
   background: rgba(102, 126, 234, 0.95);
-  padding: 20px;
+  padding: 12px 20px;
   border-radius: 0;
   backdrop-filter: blur(10px);
   position: sticky;
@@ -58,25 +53,26 @@
   display: inline-block;
   background: rgba(255, 255, 255, 0.3);
   color: white;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 14px;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 11px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 6px;
   text-transform: uppercase;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
 }
 
 .cocktail-name-display h1 {
-  font-size: 36px;
-  margin: 0 0 5px 0;
+  font-size: 28px;
+  margin: 0;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
 }
 
 .cocktail-name-display p {
-  font-size: 16px;
+  font-size: 13px;
   opacity: 0.95;
-  margin: 0;
+  margin: 3px 0 0 0;
 }
 
 .answer-sections {
@@ -331,12 +327,21 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .cocktail-name-display {
+    padding: 10px 15px;
+  }
+
   .cocktail-name-display h1 {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .cocktail-name-display p {
-    font-size: 14px;
+    font-size: 12px;
+  }
+
+  .cocktail-badge {
+    font-size: 10px;
+    padding: 3px 10px;
   }
 
   .header h2 {
