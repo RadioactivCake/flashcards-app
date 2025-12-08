@@ -21,6 +21,13 @@ export default function Home({ onModeChange }) {
         >
           Quiz Mode
         </button>
+
+        <button
+          className="primary-btn cocktail-btn"
+          onClick={() => onModeChange('cocktail')}
+        >
+          Cocktail Recipes
+        </button>
       </div>
     </div>
   );

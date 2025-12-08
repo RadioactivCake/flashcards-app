@@ -65,6 +65,15 @@
   box-shadow: 0 10px 25px rgba(245, 87, 108, 0.4);
 }
 
+.cocktail-btn {
+  background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.cocktail-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(250, 112, 154, 0.4);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
   .home-container {
