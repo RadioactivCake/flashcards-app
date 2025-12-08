@@ -74,20 +74,22 @@ export default function CocktailPractice({ onBack }) {
 
   return (
     <div className="cocktail-practice-container">
-      <div className="header">
-        <button className="back-btn" onClick={onBack}>
-          ← חזרה
-        </button>
-        <h2>תרגול מתכונים</h2>
+      <div className="sticky-header">
+        <div className="header">
+          <button className="back-btn" onClick={onBack}>
+            ← חזרה
+          </button>
+          <h2>תרגול מתכונים</h2>
+        </div>
+
+        <div className="cocktail-name-display">
+          <div className="cocktail-badge">קוקטייל נוכחי</div>
+          <h1>{currentCocktail.name}</h1>
+        </div>
       </div>
 
-      <div className="cocktail-name-display">
-        <div className="cocktail-badge">קוקטייל נוכחי</div>
-        <h1>{currentCocktail.name}</h1>
-        <p>איך מכינים את הקוקטייל הזה?</p>
-      </div>
-
-      <div className="answer-sections">
+      <div className="scrollable-content">
+        <div className="answer-sections">
         {/* Method Selection */}
         <div className="section">
           <h3>שיטת הכנה {selectedMethod && '✓'}</h3>
@@ -232,6 +234,7 @@ export default function CocktailPractice({ onBack }) {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
