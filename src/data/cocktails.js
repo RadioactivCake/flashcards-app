@@ -57,7 +57,106 @@ export const cocktails = [
     garnish: "פלח תפוז",
     glass: "היי בול"
   },
-  
+  {
+    id: 3,
+    name: "Planters Punch",
+    method: "שייקר",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "מיץ אננס", specification: null, amount: "1" },
+      { item: "מיץ תפוזים", specification: null, amount:  "1" },
+      { item: "מיץ לימון", specification: null, amount: "0.5"},
+      { item: "גרנדין", specification: null, amount: "0.25" },
+
+    ],
+    garnish: "פלח תפוז",
+    glass: "היי בול"
+  },
+  {
+    id: 4,
+    name: "Hurricane",
+    method: "שייקר",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "מיץ תפוזים", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount:  "0.5" },
+      { item: "סירופ פסיפלורה", specification: null, amount: "0.25"},
+      { item: "גרנדין", specification: null, amount: "0.25" },
+
+    ],
+    garnish: "פלח לימון",
+    glass: "כוס קוקטיילים"
+  },
+  {
+    id: 5,
+    name: "Sex on the Beach",
+    method: "שייקר",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "ליקר אפרסק", specification: null, amount: "0.75" },
+      { item: "מיץ תפוזים", specification: null, amount:  "1" },
+      { item: "מיץ חמוציות", specification: null, amount: "1"},
+
+    ],
+    garnish: "פלח לימון",
+    glass: "היי בול"
+  },
+  {
+    id: 6,
+    name: "Mai Tai",
+    method: "שייקר",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "טריפל סק", specification: null, amount: "0.5" },
+      { item: "סירופ שקדים", specification: null, amount:  "0.25" },
+      { item: "מיץ לימון", specification: null, amount: "0.75"},
+
+    ],
+    garnish: "פלח לימון",
+    glass: "לואו בול"
+  },
+
+  {
+    id: 7,
+    name: "Pina Colada",
+    method: "שייקר",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "מיץ אננס", specification: null, amount: "2" },
+      { item: "סירופ קוקוס", specification: null, amount: "0.25" },
+
+    ],
+    garnish: "פלח תפוז",
+    glass: "כוס קוקטיילים"
+  },
+  {
+    id: 8,
+    name: "Lychee Martini",
+    method: "שייקר",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "ליקר", specification: "ליצ'י", amount: "0.75" },
+      { item: "טריפל סק", specification: null, amount:  "0.25" },
+      { item: "מיץ לימון", specification: null, amount: "0.75"},
+
+    ],
+    garnish: "פלח לימון",
+    glass: "קופ/מרטיני"
+  },
+  {
+    id: 9,
+    name: "Apple Martini",
+    method: "שייקר",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "ליקר", specification: "תפוח", amount: "0.75" },
+      { item: "ליקר", specification: "מלון", amount:  "0.25" },
+      { item: "מיץ לימון", specification: null, amount: "0.75"},
+
+    ],
+    garnish: "פלח לימון",
+    glass: "קופ/מרטיני"
+  },
 ];
 
 // ============================================
