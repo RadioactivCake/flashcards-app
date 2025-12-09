@@ -39,9 +39,24 @@ export const cocktails = [
       { item: "גרנדין", specification: null, amount: "0.25" },
 
     ],
-    garnish: "פלח",
+    garnish: "פלח תפוז",
     glass: "היי בול"
-  }
+  },
+  {
+    id: 2,
+    name: "Painkiller",
+    method: "שייקר",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "מיץ אננס", specification: null, amount: "1.5" },
+      { item: "מיץ תפוזים", specification: null, amount:  "1" },
+      { item: "מיץ לימון", specification: null, amount: "0.75"},
+      { item: "סירופ קוקוס", specification: null, amount: "0.25" },
+
+    ],
+    garnish: "פלח תפוז",
+    glass: "היי בול"
+  },
   
 ];
 
@@ -56,8 +71,8 @@ export const ingredientSpecs = {
   "רום": null,
   "טקילה": null,
   "טריפל סק": null,
-  "ליקר": ["קלואה/קפה", "אמרטו", "ביילי'ס", "פרנג'ליקו", "קמבוזיה", "דובדבנים"],
-  "ורמוט": ["ביאנקו (לבן)", "רוסו (אדום)", "דריי (יבש)"],
+  "ליקר": ["מלון", "תפוח", "אפרסק", "ליצ'י",  "דובדבנים"],
+  "ורמוט": ["אדום", "יבש"],
   "מיץ לימון": null,
   "מיץ אננס": null,
   "מי סוכר": null,
@@ -66,8 +81,8 @@ export const ingredientSpecs = {
   "מיץ חמוציות": null,
   "מיץ תפוזים": null,
   "טוניק": null,
-  "קמפרי": null,
-  "אפרול": null
+  "חלבון להקצפה": null,
+  "ביטרס": null
 };
 
 // ============================================
