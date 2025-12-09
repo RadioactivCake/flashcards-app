@@ -3,6 +3,8 @@ import { cocktails, ingredientSpecs, glassTypes, methodOptions, garnishOptions }
 import '../styles/CocktailPractice.css';
 
 export default function CocktailPractice({ onBack }) {
+  const [cocktailSet, setCocktailSet] = useState([]);
+  const [currentIndex, setCurrentIndex] = useState(0);
   const [currentCocktail, setCurrentCocktail] = useState(null);
   const [selectedMethod, setSelectedMethod] = useState('');
   const [selectedIngredients, setSelectedIngredients] = useState([]);
@@ -15,12 +17,25 @@ export default function CocktailPractice({ onBack }) {
   const [showSpecSelection, setShowSpecSelection] = useState(false);
 
   useEffect(() => {
-    selectRandomCocktail();
+    // Select 5 unique random cocktails when component loads
+    const shuffled = [...cocktails].sort(() => Math.random() - 0.5);
+    const selected = shuffled.slice(0, 5);
+    setCocktailSet(selected);
+    setCurrentCocktail(selected[0]);
   }, []);
 
-  const selectRandomCocktail = () => {
-    const randomIndex = Math.floor(Math.random() * cocktails.length);
-    setCurrentCocktail(cocktails[randomIndex]);
+  const goToNextCocktail = () => {
+    const nextIndex = currentIndex + 1;
+
+    // If we've finished all 5 cocktails, return to menu
+    if (nextIndex >= 5) {
+      onBack();
+      return;
+    }
+
+    // Otherwise, move to next cocktail
+    setCurrentIndex(nextIndex);
+    setCurrentCocktail(cocktailSet[nextIndex]);
     resetAnswers();
   };
 
@@ -83,7 +98,7 @@ export default function CocktailPractice({ onBack }) {
         </div>
 
         <div className="cocktail-name-display">
-          <div className="cocktail-badge">קוקטייל נוכחי</div>
+          <div className="cocktail-badge">קוקטייל {currentIndex + 1} מתוך 5</div>
           <h1>{currentCocktail.name}</h1>
         </div>
       </div>
@@ -202,7 +217,9 @@ export default function CocktailPractice({ onBack }) {
       {/* Check Answer Button */}
       <div className="action-buttons">
         <button onClick={checkAnswer} className="check-btn">בדוק תשובה</button>
-        <button onClick={selectRandomCocktail} className="next-btn">קוקטייל הבא</button>
+        <button onClick={goToNextCocktail} className="next-btn">
+          {currentIndex === 4 ? 'סיום וחזרה לתפריט' : 'קוקטייל הבא'}
+        </button>
       </div>
 
       {/* Show Correct Answer */}
