@@ -391,6 +391,18 @@ export const cocktails = [
     garnish: "פלח לימון",
     glass: "היי בול"
   },
+  {
+    id: 29,
+    name: "Woo-Woo",
+    method: "בנייה",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "ליקר", specification: "אפרסק", amount: "0.5" },
+      { item: "מיץ חמוציות", specification: null, amount: "השלמה" },
+    ],
+    garnish: "פלח תפוז",
+    glass: "היי בול"
+  },
 ];
 
 // ============================================
