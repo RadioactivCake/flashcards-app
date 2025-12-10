@@ -330,6 +330,67 @@ export const cocktails = [
     garnish: "פלח לימון",
     glass: "לואו בול"
   },
+  {
+    id: 24,
+    name: "Sea Breeze",
+    method: "בנייה",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "מיץ חמוציות", specification: null, amount: "השלמה" },
+      { item: "מיץ אשכוליות", specification: null, amount: "השלמה" },
+    ],
+    garnish: "פלח לימון",
+    glass: "היי בול"
+  },
+  {
+    id: 25,
+    name: "Madras",
+    method: "בנייה",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "מיץ תפוזים", specification: null, amount: "השלמה" },
+      { item: "מיץ חמוציות", specification: null, amount: "השלמה" },
+    ],
+    garnish: "פלח תפוז",
+    glass: "היי בול"
+  },
+  {
+    id: 26,
+    name: "Tom Collins",
+    method: "בנייה",
+    ingredients: [
+      { item: "ג'ין", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.75" },
+      { item: "סודה", specification: null, amount: "השלמה" },
+    ],
+    garnish: "פלח לימון",
+    glass: "היי בול"
+  },
+  {
+    id: 27,
+    name: "Bay Breeze",
+    method: "בנייה",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "מיץ אננס", specification: null, amount: "השלמה" },
+      { item: "מיץ חמוציות", specification: null, amount: "השלמה" },
+    ],
+    garnish: "פלח תפוז",
+    glass: "היי בול"
+  },
+  {
+    id: 28,
+    name: "Cuba Libra",
+    method: "בנייה",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.25" },
+      { item: "קולה", specification: null, amount: "השלמה" },
+    ],
+    garnish: "פלח לימון",
+    glass: "היי בול"
+  },
 ];
 
 // ============================================
@@ -353,7 +414,10 @@ export const ingredientSpecs = {
   "גרנדין": null,
   "מיץ חמוציות": null,
   "מיץ תפוזים": null,
+  "מיץ אשכוליות": null,
   "טוניק": null,
+  "סודה": null,
+  "קולה": null,
   "חלבון להקצפה": null,
   "ביטרס": null
 };
