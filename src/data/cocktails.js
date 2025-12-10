@@ -403,6 +403,64 @@ export const cocktails = [
     garnish: "פלח תפוז",
     glass: "היי בול"
   },
+  {
+    id: 30,
+    name: "Old Fashioned",
+    method: "ערבוב",
+    ingredients: [
+      { item: "וויסקי", specification: null, amount: "1.5" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+      { item: "ביטרס", specification: null, amount: "3" },
+    ],
+    garnish: "קליפת תפוז",
+    glass: "לואו בול"
+  },
+  {
+    id: 31,
+    name: "Manhattan",
+    method: "ערבוב",
+    ingredients: [
+      { item: "וויסקי", specification: null, amount: "1.5" },
+      { item: "ורמוט", specification: "אדום", amount: "0.75" },
+      { item: "ביטרס", specification: null, amount: "2" },
+    ],
+    garnish: "קליפת תפוז",
+    glass: "מרטיני"
+  },
+  {
+    id: 32,
+    name: "Dry Martini",
+    method: "ערבוב",
+    ingredients: [
+      { item: "ג'ין", specification: null, amount: "1.5" },
+      { item: "ורמוט", specification: "יבש", amount: "0.5" },
+    ],
+    garnish: "זית או קליפת לימון",
+    glass: "מרטיני"
+  },
+  {
+    id: 33,
+    name: "Perfect Martini",
+    method: "ערבוב",
+    ingredients: [
+      { item: "ג'ין", specification: null, amount: "1.5" },
+      { item: "ורמוט", specification: "אדום", amount: "0.25" },
+      { item: "ורמוט", specification: "יבש", amount: "0.25" },
+    ],
+    garnish: "קליפת לימון או תפוז",
+    glass: "מרטיני"
+  },
+  {
+    id: 34,
+    name: "Vodka Martini",
+    method: "ערבוב",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "ורמוט", specification: "יבש", amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרטיני"
+  },
 ];
 
 // ============================================
