@@ -157,6 +157,179 @@ export const cocktails = [
     garnish: "פלח לימון",
     glass: "קופ/מרטיני"
   },
+  {
+    id: 10,
+    name: "Lemon Drop",
+    method: "שייקר",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "טריפל סק", specification: null, amount: "0.5" },
+      { item: "מיץ לימון", specification: null, amount: "1" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרטיני/קופ"
+  },
+  {
+    id: 11,
+    name: "Cosmopolitan",
+    method: "שייקר",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "טריפל סק", specification: null, amount: "0.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.25" },
+      { item: "מיץ חמוציות", specification: null, amount: "1" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרטיני/קופ"
+  },
+  {
+    id: 12,
+    name: "Whiskey Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "וויסקי", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "1" },
+      { item: "מי סוכר", specification: null, amount: "0.75" },
+      { item: "חלבון להקצפה", specification: null, amount: "1" },
+    ],
+    garnish: "פלח תפוז",
+    glass: "לואו בול"
+  },
+  {
+    id: 13,
+    name: "Fitzgerald",
+    method: "שייקר",
+    ingredients: [
+      { item: "ג'ין", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "1" },
+      { item: "מי סוכר", specification: null, amount: "0.75" },
+      { item: "ביטרס", specification: null, amount: "2" },
+    ],
+    garnish: "פלח לימון",
+    glass: "קופ"
+  },
+  {
+    id: 14,
+    name: "White Lady",
+    method: "שייקר",
+    ingredients: [
+      { item: "ג'ין", specification: null, amount: "1.5" },
+      { item: "טריפל סק", specification: null, amount: "0.75" },
+      { item: "מיץ לימון", specification: null, amount: "1" },
+      { item: "חלבון להקצפה", specification: null, amount: "1" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרטיני/קופ"
+  },
+  {
+    id: 15,
+    name: "Daiquiri",
+    method: "שייקר",
+    ingredients: [
+      { item: "רום", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.75" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרטיני/קופ"
+  },
+  {
+    id: 16,
+    name: "Gimlet",
+    method: "שייקר",
+    ingredients: [
+      { item: "ג'ין", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.75" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרטיני/קופ"
+  },
+  {
+    id: 17,
+    name: "Margarita",
+    method: "שייקר",
+    ingredients: [
+      { item: "טקילה", specification: null, amount: "1.5" },
+      { item: "טריפל סק", specification: null, amount: "0.75" },
+      { item: "מיץ לימון", specification: null, amount: "1" },
+    ],
+    garnish: "פלח לימון",
+    glass: "מרגריטה/קופ"
+  },
+  {
+    id: 18,
+    name: "Lychee Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "ליקר", specification: "ליצ'י", amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "לואו בול"
+  },
+  {
+    id: 19,
+    name: "Melon Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "ליקר", specification: "מלון", amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "לואו בול"
+  },
+  {
+    id: 20,
+    name: "Peach Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "ליקר", specification: "אפרסק", amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "לואו בול"
+  },
+  {
+    id: 21,
+    name: "Apple Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "ליקר", specification: "תפוח", amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "לואו בול"
+  },
+  {
+    id: 22,
+    name: "Vodka Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "וודקה", specification: null, amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "1" },
+      { item: "מי סוכר", specification: null, amount: "0.75" },
+    ],
+    garnish: "פלח תפוז",
+    glass: "לואו בול"
+  },
+  {
+    id: 23,
+    name: "Cherry Sour",
+    method: "שייקר",
+    ingredients: [
+      { item: "ליקר", specification: "דובדבנים", amount: "1.5" },
+      { item: "מיץ לימון", specification: null, amount: "0.75" },
+      { item: "מי סוכר", specification: null, amount: "0.25" },
+    ],
+    garnish: "פלח לימון",
+    glass: "לואו בול"
+  },
 ];
 
 // ============================================
@@ -169,6 +342,7 @@ export const ingredientSpecs = {
   "ג'ין": null,
   "רום": null,
   "טקילה": null,
+  "וויסקי": null,
   "טריפל סק": null,
   "ליקר": ["מלון", "תפוח", "אפרסק", "ליצ'י",  "דובדבנים"],
   "ורמוט": ["אדום", "יבש"],
@@ -192,7 +366,8 @@ export const glassTypes = [
   "לואו בול",
   "מרטיני",
   "קופ",
-  "כוס קוקטיילים"
+  "כוס קוקטיילים",
+  "מרגריטה"
 ];
 
 // ============================================
